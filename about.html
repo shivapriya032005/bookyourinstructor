@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Trebuchet MS', Arial, sans-serif;
+    }
+    body {
+        background-color: #f4f9fc;
+    }
+    .about {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 20px;
+        background: linear-gradient(to right, #e3f2fd, #f1f8e9);
+    }
+    .about-img {
+        flex: 1;
+        min-width: 300px;
+        background: url('https://img.freepik.com/premium-photo/open-book-with-fantasy-world-popping-out-world-book-day_556176-1257.jpg') no-repeat center/cover;
+        height: 400px;
+        border-radius: 15px;
+        margin-right: 20px;
+    }
+    .about-text {
+        flex: 2;
+        max-width: 600px;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .about-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: #555;
+    }
+    .quote {
+        font-style: italic;
+        color: #2c7873;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 1.2rem;
+    }
+    .social-media {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .social-media p {
+        margin-bottom: 10px;
+        color: #333;
+    }
+    .social-icons a {
+        margin: 0 10px;
+        font-size: 1.5rem;
+        color: #00999c;
+        transition: color 0.3s;
+    }
+    .social-icons a:hover {
+        color: #005f5f;
+    }
+    @media (max-width: 768px) {
+        .about {
+            flex-direction: column;
+        }
+        .about-img {
+            margin-bottom: 20px;
+            width: 100%;
+            height: 300px;
+        }
+        .about-text {
+            padding: 20px;
+        }
+        .about-text h1 {
+            font-size: 2rem;
+        }
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Book your instructor</a>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="index.html">Home</a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about">
+        <div class="about-img"></div>
+        <div class="about-text">
+            <h1>About Us</h1>
+            <p>
+                Welcome to My Instructor Booking System! I, <b>Lalitha Shivapriya</b>, designed this website to make it easy for you to explore and book instructor time, learn new skills, and much more. We support your learning journey by providing a seamless and efficient booking experience with access to various learning resources.
+            </p>
+            <p>
+                Join us in embracing the power of knowledge and discovery. Let us make your booking experience simple, efficient, and enjoyable!
+            </p>
+            <div class="quote">"Learning makes people perfect."</div>
+            <div class="social-media">
+                <p>Connect with me:</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/lalithashivapriya?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/shiva_sriramoju_1/profilecard/?igsh=ZXR5Z2ozMWs2dml1" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://in.linkedin.com/in/lalitha-shivapriya/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

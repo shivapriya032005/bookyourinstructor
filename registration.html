@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Your existing styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .register-container {
+            width: 400px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .register-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .register-btn:hover {
+            background-color: #555;
+        }
+
+        .link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        .link:hover {
+            color: #555;
+        }
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        .navbar .logo {
+            font-size: 1.5em;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        .navbar a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">Book your instructor</div>
+        <div>
+            <a href="Index.html">Home</a>
+            <a href="about.html">About Us</a>
+        </div>
+    </div>
+
+    <div class="register-container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <input type="text" name="fullname" placeholder="Full Name" class="input-field" required>
+            <input type="email" name="email" placeholder="Email" class="input-field" required>
+            <input type="text" name="username" placeholder="Username" class="input-field" required>
+            <input type="password" name="password" placeholder="Password" class="input-field" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" class="input-field" required>
+            <select name="role" class="input-field" required>
+                <option value="">Select Role</option>
+                <option value="student">Student</option>
+                <option value="instructor">Instructor</option>
+            </select>
+            <button type="submit" class="register-btn">Register</button>
+            <a href="login.html" class="link">Already have an account? Login</a>
+        </form>
+    </div>
+
+    <script>
+        // Function to handle form submission and save data in local storage
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fullname = document.querySelector('input[name="fullname"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const username = document.querySelector('input[name="username"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            const confirmPassword = document.querySelector('input[name="confirm_password"]').value;
+            const role = document.querySelector('select[name="role"]').value;
+
+            // Password validation
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            // Create a user object
+            const user = {
+                fullname,
+                email,
+                username,
+                password,
+                role
+            };
+
+            // Retrieve existing users from local storage or create an empty array if none
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Add the new user to the array
+            users.push(user);
+
+            // Save the updated users array back to local storage
+            localStorage.setItem('users', JSON.stringify(users));
+
+            alert('Registration successful!');
+
+            // Optionally, reset the form after submission
+            document.getElementById('registerForm').reset();
+        });
+    </script>
+</body>
+</html>
